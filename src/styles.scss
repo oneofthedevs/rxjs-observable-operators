@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+:host {
+  font-size: 14px;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+
+.container {
+  width: 80%;
+}
+
+.mx-auto {
+  margin: 0 auto;
+}
+
+.my-1 {
+  margin: 1rem auto;
+}

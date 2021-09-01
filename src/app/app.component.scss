@@ -1,0 +1,12 @@
+.simple-navbar {
+  text-align: center;
+  background-color: #60a5fa;
+  padding: 10px 0;
+  h1 {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+}
+.full-size {
+  min-height: calc(100vh - (2.25rem + 20px));
+}
