@@ -1,20 +1,22 @@
 <div class="container mx-auto">
-  <h2>
+  <h2 class="h2">
     Task 1: Create Observable using Constructor Method and Perform Error,
     Completion, Next on Observer
   </h2>
   <section class="my-1">
-    <h3>Click on the button and open console to see output</h3>
     <p>fileName: task1.component.ts</p>
     <div class="obs-buttons">
-      <button (click)="createObservable()">Create Simple Observable</button>
+      <button class="btn bg-blue" (click)="createObservable()">
+        Create Simple Observable
+      </button>
       <button
+        class="btn"
         (click)="createObservableWithError()"
         style="background-color: #ef4444"
       >
         Create Observable with Error
       </button>
     </div>
-    <button class="my-1" [routerLink]="['/task-two']">Go to Task 2 --></button>
+    <!-- <button class="my-1" [routerLink]="['/task-two']">Go to Task 2 </button> -->
   </section>
 </div>

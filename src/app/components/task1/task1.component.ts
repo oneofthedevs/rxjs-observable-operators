@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable } from 'rxjs';
 
+@UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-task1',
   templateUrl: './task1.component.html',
@@ -22,7 +24,7 @@ export class Task1Component implements OnInit {
       x.next(Math.random());
       x.complete();
     });
-    this.observer.subscribe({
+    this.observer.pipe(untilDestroyed(this)).subscribe({
       next: (val) => console.log(`%c O1: ${val}`, 'color: #000099'),
       error: (err) => console.log(`Error: ${err}`),
       complete: () =>
