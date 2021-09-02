@@ -14,6 +14,17 @@ body {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
+p {
+  font-size: 0.785rem;
+  line-height: 1.4rem;
+}
+
+.info-p {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  font-weight: 300;
+}
+
 .flex-center {
   display: flex;
   justify-content: center;

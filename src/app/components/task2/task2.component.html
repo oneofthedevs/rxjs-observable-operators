@@ -1,3 +1,41 @@
 <div class="container mx-auto">
   <h2 class="h2">Task 2: Observable vs Subject vs Behavior Subject</h2>
 </div>
+<section class="container mx-auto osb-main-container">
+  <div class="osb-container">
+    <h2 class="h2-bold">Observable</h2>
+    <p>Subscription 1: {{ subObservable1 }}</p>
+    <p>Subscription 2: {{ subObservable2 }}</p>
+    <p class="info-p">
+      As observable is unicast, each subscription will get a new value and as we
+      cannot use observer of an observable to emit value we cannot call next()
+      method outside initialization
+    </p>
+  </div>
+  <div class="osb-container">
+    <h2 class="h2-bold">Subject</h2>
+    <p>Subscription 1: {{ subSubject1 }}</p>
+    <p>Subscription 2: {{ subSubject2 }}</p>
+    <p class="info-p">
+      As in subject no initial value is set, we need to call next() to emit some
+      value
+    </p>
+    <button class="btn bg-blue my-1" (click)="nextSubject()">
+      Click to emit value
+    </button>
+  </div>
+
+  <div class="osb-container">
+    <h2 class="h2-bold">BehaviorSubject</h2>
+    <p>Subscription 1: {{ subBehaviourSubject1 }}</p>
+    <p>Subscription 2: {{ subBehaviourSubject2 }}</p>
+    <p class="info-p">
+      BehaviorSubject takes an initial value and caches the last value, so even
+      before calling next() each observer will get the value by which
+      BehaviourSubjet is initialized with
+    </p>
+    <button class="btn bg-blue my-1" (click)="nextBehaviourSubject()">
+      Click to emit value
+    </button>
+  </div>
+</section>

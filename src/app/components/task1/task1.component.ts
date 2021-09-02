@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { Observable } from 'rxjs';
 
+// To unsubscribe observables automatically
 @UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-task1',
@@ -13,11 +14,11 @@ export class Task1Component implements OnInit {
   public observer: Observable<any> | null = null;
   constructor() {}
 
-  ngOnInit(): void {
-    console.clear();
-    console.log('%c Task 1', 'font-size: 20px');
-  }
+  ngOnInit(): void {}
 
+  /**
+   * @description To create normal observable with next and complete
+   */
   public createObservable(): void {
     this.observer = new Observable((x) => {
       x.next(Math.random());
@@ -35,6 +36,9 @@ export class Task1Component implements OnInit {
     });
   }
 
+  /**
+   * @description To create observable with next, error and complete
+   */
   public createObservableWithError() {
     this.observer = new Observable((x) => {
       x.next(Math.random());
