@@ -3,7 +3,31 @@
     Task 3: Map, SwitchMap, Filter, Find, Merge, ForkJoin Operators
   </h2>
   <section>
+    <!-- ForkJoin -->
     <h2 class="h2">ForkJoin</h2>
-    <p>FormJoinData - See the console</p>
+    <p>
+      ForkJoin returns the last emitted of each observable passed. So here value
+      will be emitted when final value of all 3 APIs is received
+    </p>
+    <p class="info-p">FormJoinData - See the console for output</p>
+    <p *ngIf="apiData">All 3 APIs loaded 🥳 - Here's a joke for you from API</p>
+    <p>{{ apiData?.dadJoke.value.joke }}</p>
+
+    <!-- Find -->
+    <h2 class="h2">Find - Finding Darth Vader from List of characters</h2>
+    <p>
+      Tries to find the value according to condition and returns the first
+      result if found, in case of value not found it will return undefined
+    </p>
+    <p>{{ darthVaderData | json }}</p>
+
+    <!-- Filter and Map -->
+    <h2 class="h2">
+      Filter and Map - Finding names and height of characters with height > 170
+    </h2>
+    <p *ngFor="let character of tallCharacters">
+      {{ character.name }} - {{ character.height }}
+    </p>
+    <!--  -->
   </section>
 </div>

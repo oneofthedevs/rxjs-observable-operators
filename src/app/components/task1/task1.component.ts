@@ -39,7 +39,7 @@ export class Task1Component implements OnInit {
   /**
    * @description To create observable with next, error and complete
    */
-  public createObservableWithError() {
+  public createObservableWithError(): void {
     this.observer = new Observable((x) => {
       x.next(Math.random());
       x.next(Math.random());
@@ -56,6 +56,4 @@ export class Task1Component implements OnInit {
         ),
     });
   }
-
-  public next(): void {}
 }
