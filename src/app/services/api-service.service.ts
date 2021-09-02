@@ -11,8 +11,8 @@ export class ApiServiceService {
 
   constructor(private _http: HttpClient) {}
 
-  public getMultipleStarWarsCharacters(): Observable<any> {
-    return this._http.get(`${this.baseStarWarsUrl}people/`);
+  public getMultipleStarWarsCharacters(page: string = ''): Observable<any> {
+    return this._http.get(`${this.baseStarWarsUrl}people/${page}`);
   }
 
   public getObiWanKenobi(): Observable<any> {

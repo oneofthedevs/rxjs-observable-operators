@@ -1,5 +1,6 @@
 <div class="container mx-auto">
-  <h2 class="h2">Task 2: Observable vs Subject vs Behavior Subject</h2>
+  <h2 class="h2">Task 2: Observable vs Subject vs BehaviorSubject</h2>
+  <p>fileName: task2.component.ts</p>
 </div>
 <section class="container mx-auto osb-main-container">
   <div class="osb-container">
@@ -11,6 +12,9 @@
       cannot use observer of an observable to emit value we cannot call next()
       method outside initialization
     </p>
+    <button class="btn bg-blue my-1" (click)="subscribeToObservable()">
+      Click to resubscribe
+    </button>
   </div>
   <div class="osb-container">
     <h2 class="h2-bold">Subject</h2>

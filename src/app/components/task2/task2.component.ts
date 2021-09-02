@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
+@UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-task2',
   templateUrl: './task2.component.html',
@@ -38,7 +40,7 @@ export class Task2Component implements OnInit {
   }
 
   /**
-   * @description To initialize to observable
+   * @description To initialize the observable
    */
   private initializeObservable(): void {
     this.obsObserver = new Observable((x) => {
@@ -50,7 +52,7 @@ export class Task2Component implements OnInit {
   }
 
   /**
-   * @description To initialize to subject
+   * @description To initialize the subject
    */
   private initializeSubject(): void {
     // Subject does not have a initial value, it any observer subscribes to the subject it won't get any value until next() is called
@@ -58,7 +60,7 @@ export class Task2Component implements OnInit {
   }
 
   /**
-   * @description To initialize to subject
+   * @description To initialize the subject
    */
   private initializeBehaviorSubject(): void {
     /**
@@ -71,8 +73,8 @@ export class Task2Component implements OnInit {
   /**
    * @description Subscribing to observable
    */
-  private subscribeToObservable(): void {
-    this.obsObserver?.subscribe({
+  public subscribeToObservable(): void {
+    this.obsObserver?.pipe(untilDestroyed(this)).subscribe({
       next: (val) => {
         console.log(`Observable Subscription 1: ${val}`);
         this.subObservable1 = val;
@@ -82,7 +84,7 @@ export class Task2Component implements OnInit {
       },
       complete: () => {},
     });
-    this.obsObserver?.subscribe({
+    this.obsObserver?.pipe(untilDestroyed(this)).subscribe({
       next: (val) => {
         console.log(`Observable Subscription 2: ${val}`);
         this.subObservable2 = val;
@@ -98,7 +100,7 @@ export class Task2Component implements OnInit {
    * @description Subscribing to subject
    */
   private subscribeToSubject(): void {
-    this.subjectObserver?.subscribe({
+    this.subjectObserver?.pipe(untilDestroyed(this)).subscribe({
       next: (val) => {
         console.log(`Subject Subscription 1: ${val}`);
         this.subSubject1 = val;
@@ -108,7 +110,7 @@ export class Task2Component implements OnInit {
       },
       complete: () => {},
     });
-    this.subjectObserver?.subscribe({
+    this.subjectObserver?.pipe(untilDestroyed(this)).subscribe({
       next: (val) => {
         console.log(`Subject Subscription 2: ${val}`);
         this.subSubject2 = val;
@@ -124,7 +126,7 @@ export class Task2Component implements OnInit {
    * @description Subscribing to behaviorSubject
    */
   private subscribeToBehaviorSubject(): void {
-    this.behaviorSubject?.subscribe({
+    this.behaviorSubject?.pipe(untilDestroyed(this)).subscribe({
       next: (val) => {
         console.log(`BehaviorSubject Subscription 1: ${val}`);
         this.subBehaviourSubject1 = val;
@@ -134,7 +136,7 @@ export class Task2Component implements OnInit {
         console.log(`%c ${err}`, 'color: #aa00000');
       },
     });
-    this.behaviorSubject?.subscribe({
+    this.behaviorSubject?.pipe(untilDestroyed(this)).subscribe({
       next: (val) => {
         console.log(`BehaviorSubject Subscription 2: ${val}`);
         this.subBehaviourSubject2 = val;

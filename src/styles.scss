@@ -46,6 +46,12 @@ p {
   margin: 1rem auto;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+.mb-4 {
+  margin-bottom: 2rem;
+}
 .h2 {
   font-weight: 400;
 }
@@ -62,6 +68,7 @@ p {
   color: #fff;
   font-size: 12px;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 .bg-blue {

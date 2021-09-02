@@ -46,7 +46,7 @@ export class Task1Component implements OnInit {
       x.error('Some error');
       x.complete();
     });
-    this.observer.subscribe({
+    this.observer.pipe(untilDestroyed(this)).subscribe({
       next: (val) => console.log(`%c O2: ${val}`, 'color: #990000'),
       error: (err) => console.log(`Error: ${err}`),
       complete: () =>
