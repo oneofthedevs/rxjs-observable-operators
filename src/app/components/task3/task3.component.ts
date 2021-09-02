@@ -1,19 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
-import { forkJoin, from, interval, Observable, of, pipe } from 'rxjs';
+import { forkJoin, from, interval, Observable, of } from 'rxjs';
+import { filter, find, map, merge, switchMap, take } from 'rxjs/operators';
 import { ApiServiceService } from 'src/app/services/api-service.service';
-import {
-  debounce,
-  debounceTime,
-  filter,
-  find,
-  map,
-  merge,
-  switchMap,
-  take,
-  throttle,
-  throttleTime,
-} from 'rxjs/operators';
 @UntilDestroy({ checkProperties: true })
 @Component({
   selector: 'app-task3',
