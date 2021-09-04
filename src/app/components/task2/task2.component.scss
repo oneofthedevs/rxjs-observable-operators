@@ -1,0 +1,12 @@
+.osb-main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  .osb-container {
+    flex-grow: 1;
+    flex: 1;
+    .h2-bold {
+      font-weight: 600;
+    }
+  }
+}
