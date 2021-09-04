@@ -18,6 +18,9 @@ export class Task1Component implements OnInit {
     console.log('%c Task 1', 'font-size: 20px');
   }
 
+  /**
+   * @description Creating and subscribing to observable which gets completed later on
+   */
   public createObservable(): void {
     this.observer = new Observable((x) => {
       x.next(Math.random());
@@ -35,6 +38,9 @@ export class Task1Component implements OnInit {
     });
   }
 
+  /**
+   * @description Creating and subscribing to observable which gets gets an error emitted in-between
+   */
   public createObservableWithError() {
     this.observer = new Observable((x) => {
       x.next(Math.random());
